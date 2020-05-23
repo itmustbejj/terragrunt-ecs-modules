@@ -37,3 +37,18 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+
+variable "region" {
+  description = "AWS region for container's node."
+  default = "us-east-1"
+}
+
+variable "environment" {
+  description = "Logical environment of container deployment."
+  default = "stage"
+}
+
+variable "log_group" {
+  description = "Log groups that will be created in CloudWatch Logs"
+  default     = ""
+}

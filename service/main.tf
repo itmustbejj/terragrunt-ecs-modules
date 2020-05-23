@@ -1,5 +1,5 @@
-resource "aws_ecs_task_definition" "app" {
-  family = "app-dev"
+resource "aws_ecs_task_definition" var.container_name {
+  family = "${var.container_name}-${var.environment}"
   container_definitions = <<EOF
 [
   {
@@ -14,8 +14,8 @@ resource "aws_ecs_task_definition" "app" {
     "logConfiguration": {
       "logDriver": "awslogs",
       "options": {
-        "awslogs-group": "app-dev-nginx",
-        "awslogs-region": "us-east-1"
+        "awslogs-group": var.log_group,
+        "awslogs-region": var.region
       }
     },
     "memory": var.container_memory,
@@ -35,7 +35,7 @@ module "ecs_service_app" {
   cluster              = module.ecs_cluster.cluster_id
   container_name       = var.container_name
   container_port       = var.container_port
-  log_groups           = ["app-dev-nginx"]
+  log_groups           = [var.log_group]
   task_definition_arn  = aws_ecs_task_definition.app.arn
 
   tags = var.tags
