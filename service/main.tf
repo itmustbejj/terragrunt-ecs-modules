@@ -1,5 +1,5 @@
-resource "aws_ecs_task_definition" var.container_name {
-  family = "${var.container_name}-${var.environment}"
+resource "aws_ecs_task_definition" "app" {
+  family                = "${var.container_name}-${var.environment}"
   container_definitions = <<EOF
 [
   {
@@ -26,7 +26,7 @@ EOF
 }
 
 module "ecs_service_app" {
-  source = "anrim/ecs/aws//modules/service"
+  source  = "anrim/ecs/aws//modules/service"
   version = "~> 1.0.9"
 
   name = var.name

@@ -40,12 +40,12 @@ variable "tags" {
 
 variable "region" {
   description = "AWS region for container's node."
-  default = "us-east-1"
+  default     = "us-east-1"
 }
 
 variable "environment" {
   description = "Logical environment of container deployment."
-  default = "stage"
+  default     = "stage"
 }
 
 variable "log_group" {

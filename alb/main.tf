@@ -1,5 +1,5 @@
 module "alb" {
-  source = "anrim/ecs/aws//modules/alb"
+  source  = "anrim/ecs/aws//modules/alb"
   version = "~> 1.0.9"
 
   name            = var.name
@@ -8,6 +8,6 @@ module "alb" {
   certificate_arn = var.certificate_arn
   backend_sg_id   = var.backend_sg_id
   tags            = var.tags
-  vpc_id      = var.vpc_id
-  vpc_subnets = var.vpc_subnets
+  vpc_id          = var.vpc_id
+  vpc_subnets     = var.vpc_subnets
 }
