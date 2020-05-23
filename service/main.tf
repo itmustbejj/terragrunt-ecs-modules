@@ -27,7 +27,7 @@ EOF
 
 module "ecs_service_app" {
   source = "anrim/ecs/aws//modules/service"
-  version = "~> ${var.module_version}}"
+  version = "~> 1.0.9"
 
   name = var.name
 

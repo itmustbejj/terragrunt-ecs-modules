@@ -1,6 +1,6 @@
 module "ecs_cluster" {
   source = "anrim/ecs/aws//modules/cluster"
-  version = "~> ${var.module_version}"
+  version = "~> 1.0.9"
 
   name = var.name
   vpc_id      = var.vpc_id

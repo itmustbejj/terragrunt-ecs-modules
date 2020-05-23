@@ -1,6 +1,6 @@
 module "alb" {
   source = "anrim/ecs/aws//modules/alb"
-  version = "~> ${var.module_version}"
+  version = "~> 1.0.9"
 
   name            = var.name
   host_name       = var.host_name
