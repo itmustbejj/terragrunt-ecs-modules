@@ -1,6 +1,5 @@
 module "ecs_cluster" {
-  source  = "anrim/ecs/aws//modules/cluster"
-  version = "~> 1.0.9"
+  source  = "git@github.com:itmustbejj/terraform-aws-ecs//modules/cluster"
 
   name        = var.name
   vpc_id      = var.vpc_id

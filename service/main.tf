@@ -26,8 +26,7 @@ EOF
 }
 
 module "ecs_service_app" {
-  source  = "anrim/ecs/aws//modules/service"
-  version = "~> 1.0.9"
+  source  = "git@github.com:itmustbejj/terraform-aws-ecs//modules/service"
 
   name = var.name
 

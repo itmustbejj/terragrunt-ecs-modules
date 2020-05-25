@@ -1,6 +1,5 @@
 module "alb" {
-  source  = "anrim/ecs/aws//modules/alb"
-  version = "~> 1.0.9"
+  source  = "git@github.com:itmustbejj/terraform-aws-ecs//modules/alb"
 
   name            = var.name
   host_name       = var.host_name

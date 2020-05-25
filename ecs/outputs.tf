@@ -1,11 +1,11 @@
 output "cluster_id" {
-  value = "${aws_ecs_cluster.ecs.id}"
+  value = module.ecs_cluster.cluster_id
 }
 
 output "instance_sg_id" {
-  value = "${aws_security_group.instance.id}"
+  value = module.ecs_cluster.instance_sg_id
 }
 
 output "instance_role" {
-  value = "${aws_iam_role.instance.name}"
+  value = module.ecs_cluster.instance_role
 }
