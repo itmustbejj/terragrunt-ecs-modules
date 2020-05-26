@@ -5,21 +5,21 @@ resource "aws_ecs_task_definition" "app" {
   {
     "name": "${var.container_name}",
     "image": "${var.container_image}",
-    "essential": "${var.essential}",
+    "essential": ${var.essential},
     "portMappings": [
       {
-        "containerPort": "${var.container_port}"
+        "containerPort": ${var.container_port}
       }
     ],
     "logConfiguration": {
       "logDriver": "awslogs",
       "options": {
-        "awslogs-group": "${var.log_group}",
+        "awslogs-group": "${var.log_groups[0]}",
         "awslogs-region": "${var.region}"
       }
     },
-    "memory": "${var.container_memory}",
-    "cpu": "${var.container_cpu}"
+    "memory": ${var.container_memory},
+    "cpu": ${var.container_cpu}
   }
 ]
 EOF
@@ -34,7 +34,7 @@ module "ecs_service_app" {
   cluster              = var.cluster
   container_name       = var.container_name
   container_port       = var.container_port
-  log_groups           = [var.log_group]
+  log_groups           = var.log_groups
   task_definition_arn  = aws_ecs_task_definition.app.arn
 
   tags = var.tags

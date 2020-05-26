@@ -56,7 +56,8 @@ variable "environment" {
   default     = "stage"
 }
 
-variable "log_group" {
+variable "log_groups" {
   description = "Log groups that will be created in CloudWatch Logs"
-  default     = ""
+  type        = list(string)
+  default     = [""]
 }
