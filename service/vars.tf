@@ -1,3 +1,11 @@
+variable "alb_target_group_arn" {
+  description = "ARN of the ALB target group that should be associated with the ECS service"
+}
+
+variable "cluster" {
+  description = "Name of the ECS cluster to create service in"
+}
+
 variable "module_version" {
   description = "Version of the terraform module"
   type        = string
@@ -13,7 +21,7 @@ variable "container_port" {
   default     = 80
 }
 
-variable "continue_image" {
+variable "container_image" {
   description = "Docker image for container"
 }
 
