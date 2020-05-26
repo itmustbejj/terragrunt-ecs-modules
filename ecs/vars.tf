@@ -4,6 +4,16 @@ variable "module_version" {
   default     = "1.0.9"
 }
 
+variable "asg_max_size" {
+  description = "Maximum number EC2 instances"
+  default     = 2
+}
+
+variable "asg_min_size" {
+  description = "Minimum number of instances"
+  default     = 1
+}
+
 variable "name" {
   description = "Name to be used on all the resources as identifier"
   type        = string
