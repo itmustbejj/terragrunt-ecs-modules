@@ -1,5 +1,5 @@
 module "alb" {
-  source  = "git@github.com:itmustbejj/terraform-aws-ecs//modules/alb"
+  source = "git@github.com:itmustbejj/terraform-aws-ecs//modules/alb"
 
   name            = var.name
   host_name       = var.host_name

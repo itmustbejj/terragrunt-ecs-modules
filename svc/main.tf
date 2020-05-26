@@ -26,7 +26,7 @@ EOF
 }
 
 module "ecs_service_app" {
-  source  = "git@github.com:itmustbejj/terraform-aws-ecs//modules/service"
+  source = "git@github.com:itmustbejj/terraform-aws-ecs//modules/service"
 
   name = var.container_name
 
